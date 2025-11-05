@@ -34,12 +34,15 @@
             <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
             <asp:BoundField DataField="Apellido1" HeaderText="Primer Apellido" SortExpression="Apellido1" />
             <asp:BoundField DataField="Apellido2" HeaderText="Segundo Apellido" SortExpression="Apellido2" />
+            <asp:BoundField DataField="Nacionalidad" HeaderText="Nacionalidad" SortExpression="Nacionalidad" />
+            <asp:BoundField DataField="FechaNacimiento" HeaderText="Fecha Nacimiento" SortExpression="FechaNacimiento" />
+            <asp:BoundField DataField="Telefono" HeaderText="Telefono" SortExpression="Telefono" />
             <asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger" />
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server"
-        ConnectionString="<%$ ConnectionStrings:II46ConnectionString %>"
-        ProviderName="<%$ ConnectionStrings:II46ConnectionString.ProviderName %>"
+        ConnectionString="<%$ ConnectionStrings:II-46ConnectionString %>"
+        ProviderName="<%$ ConnectionStrings:II-46ConnectionString.ProviderName %>"
         SelectCommand="SELECT * FROM [Personas]"></asp:SqlDataSource>
 
 
