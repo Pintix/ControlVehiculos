@@ -10,15 +10,15 @@
     Protected Sub btn_guardar(sender As Object, e As EventArgs)
 
         persona.Nombre = txtNombre.Text
-        persona.Apellido1 = txtApellido.Text
-        persona.Apellido2 = txtApellido.Text
-        persona.FechaNacimiento = txtEdad.Text
+        persona.Apellido1 = txtApellido1.Text
+        persona.Apellido2 = txtApellido2.Text
+        persona.FechaNacimiento = txtFechaNac.Text
 
         If dbHelper.create(persona) Then
             lblMensaje.Text = "Persona creada"
             txtNombre.Text = ""
-            txtApellido.Text = ""
-            txtEdad.Text = ""
+            txtApellido1.Text = ""
+            txtFechaNac.Text = ""
         Else
             lblMensaje.Text = "Ocurrio un error"
         End If
@@ -79,8 +79,8 @@
         Dim persona As Persona = New Persona()
 
         txtNombre.Text = row.Cells(3).Text
-        txtApellido.Text = row.Cells(4).Text
-        txtEdad.Text = row.Cells(5).Text
+        txtApellido1.Text = row.Cells(4).Text
+        txtFechaNac.Text = row.Cells(5).Text
 
         editando.Value = id
 
@@ -91,9 +91,9 @@
 
         Dim persona As Persona = New Persona With {
             .Nombre = txtNombre.Text(),
-            .Apellido1 = txtApellido.Text(),
-            .Apellido2 = txtApellido.Text(),
-            .FechaNacimiento = txtEdad.Text(),
+            .Apellido1 = txtApellido1.Text(),
+            .Apellido2 = txtApellido2.Text(),
+            .FechaNacimiento = txtFechaNac.Text(),
             .IdPersona = editando.Value()
         }
         dbHelper.update(persona)

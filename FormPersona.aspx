@@ -6,8 +6,11 @@
 <div class="container d-flex flex-column mb-3 gap-2">
 
     <asp:TextBox ID="txtNombre" CssClass="form-control" placeholder="Nombre" runat="server"></asp:TextBox>
-    <asp:TextBox ID="txtApellido" CssClass="form-control" placeholder="Apellido" runat="server"></asp:TextBox>
-    <asp:TextBox ID="txtEdad" CssClass="form-control" placeholder="Edad" runat="server"></asp:TextBox>
+    <asp:TextBox ID="txtApellido1" CssClass="form-control" placeholder="Primer Apellido" runat="server"></asp:TextBox>
+    <asp:TextBox ID="txtApellido2" CssClass="form-control" placeholder="Segundo" runat="server"></asp:TextBox>
+    <asp:TextBox ID="txtFechaNac" TextMode="Date" CssClass="form-control" placeholder="Fecha de Nacimiento" runat="server"></asp:TextBox>
+    <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+
 
     <asp:Button ID="btnMostrar" runat="server" CssClass="btn btn-primary btn-hover-move" Text="Guardar" OnClick="btn_guardar" />
     <asp:Button ID="btnActualizar" runat="server" CssClass="btn btn-primary btn-hover-move" Text="Actualizar" OnClick="btnActualizar_Click" />
@@ -27,12 +30,15 @@
         <asp:CommandField ShowEditButton="True" ControlStyle-CssClass="btn btn-primary" />
         <asp:BoundField DataField="ID" HeaderText="ID" Visible="False" ReadOnly="True" SortExpression="ID" />
         <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-        <asp:BoundField DataField="Apellido" HeaderText="Apellido" SortExpression="Apellido" />
-        <asp:BoundField DataField="Edad" HeaderText="Edad" SortExpression="Edad" />
+        <asp:BoundField DataField="Apellido1" HeaderText="Primer Apellido" SortExpression="Apellido1" />
+        <asp:BoundField DataField="Apellido2" HeaderText="Segundo Apellido" SortExpression="Apellido2" />
         <asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger" />
     </Columns>
 </asp:GridView>
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:II46ConnectionString %>" ProviderName="<%$ ConnectionStrings:II46ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [Persona]"></asp:SqlDataSource>
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+    ConnectionString="<%$ ConnectionStrings:II46ConnectionString %>" 
+    ProviderName="<%$ ConnectionStrings:II46ConnectionString.ProviderName %>" 
+    SelectCommand="SELECT * FROM [Personas]"></asp:SqlDataSource>
  
 
 </asp:Content>
