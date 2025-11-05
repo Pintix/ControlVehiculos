@@ -1,4 +1,6 @@
-﻿Public Class FormPersona
+﻿Imports ControlVehiculos.Utils
+
+Public Class FormPersona
     Inherits System.Web.UI.Page
     Public persona As New Persona()
     Protected dbHelper As New dbPersona()
@@ -16,6 +18,7 @@
             persona.Nacionalidad = txtNacionalidad.Text
             persona.FechaNacimiento = txtfechaNacimiento.Text
             persona.Telefono = txtTelefono.Text
+            SwalUtils.ShowSwalMessage(Me, "Guardando", "Guardando persona...", "Gracias")
 
 
             lblMensaje.Text = dbHelper.create(persona)
